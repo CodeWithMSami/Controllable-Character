@@ -28,5 +28,5 @@ class GamepadInput
         float getLeftX() const;
         float getLeftY() const;
 
-        void shutdown() const;
+        void shutdown();
 };

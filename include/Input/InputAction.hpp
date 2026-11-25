@@ -7,8 +7,7 @@ enum class InputAction
     MoveLeft,
     MoveRight,
     Jump,
-    Fire,
-    Pause
+    Fire
 };
 
 struct ButtonState
