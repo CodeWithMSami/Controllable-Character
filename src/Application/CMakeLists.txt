@@ -1,7 +1,7 @@
 add_library(
     Application
     STATIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/InputManager.hpp
+    ${CMAKE_SOURCE_DIR}/include/InputManager.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/InputManager.cpp
 )
 
