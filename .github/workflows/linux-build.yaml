@@ -1,0 +1,29 @@
+name: Linux Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - uses: actions/checkout@v4
+
+        - name: Install build tools
+          run: |
+            sudo apt-get update
+            sudo apt-get install -y ninja-build ccache autoconf autoconf-archive automake libtool libltdl-dev
+
+        - name: Install vcpkg
+          uses: lukka/run-vcpkg@v11
+          with:
+            vcpkgDirectory: ${{ github.workspace }}/vcpkg
+            vcpkgGitCommitId: 9eec002df1cd109f8f104cd966a763daf9751489
+
+        - name: Configure
+          run: cmake -S . --preset gcc-release -DCMAKE_MAKE_PROGRAM=/usr/bin/ninja
+          env:
+            VCPKG_ROOT: ${{ github.workspace }}/vcpkg
+
+        - name: Build
+          run: cmake --build --preset gcc-release

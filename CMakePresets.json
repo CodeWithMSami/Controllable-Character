@@ -5,7 +5,7 @@
             "name": "clang-debug",
             "displayName": "Clang Debug",
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/debug",
+            "binaryDir": "${sourceDir}/build/clang-debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE":"Debug",
                 "CMAKE_MAKE_PROGRAM": "/usr/bin/ninja",
@@ -18,11 +18,37 @@
             "name": "clang-release",
             "displayName": "Clang Release",
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/release",
+            "binaryDir": "${sourceDir}/build/clang-release",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE":"Release",
                 "CMAKE_MAKE_PROGRAM": "/usr/bin/ninja",
                 "CMAKE_CXX_COMPILER": "clang++-23",
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_TOOLCHAIN_FILE":"$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "gcc-debug",
+            "displayName": "GCC Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/gcc-debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Debug",
+                "CMAKE_MAKE_PROGRAM": "/usr/bin/ninja",
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+                "CMAKE_TOOLCHAIN_FILE":"$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        },
+        {
+            "name": "gcc-release",
+            "displayName": "GCC Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/gcc-release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Release",
+                "CMAKE_MAKE_PROGRAM": "/usr/bin/ninja",
+                "CMAKE_CXX_COMPILER": "g++",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_TOOLCHAIN_FILE":"$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
             }
@@ -38,6 +64,16 @@
             "name": "clang-release",
             "displayName": "Clang Release",
             "configurePreset": "clang-release"
+        },
+        {
+            "name": "gcc-debug",
+            "displayName": "GCC Debug",
+            "configurePreset": "gcc-debug"
+        },
+        {
+            "name": "gcc-release",
+            "displayName": "GCC Release",
+            "configurePreset": "gcc-release"
         }
     ]
 }
