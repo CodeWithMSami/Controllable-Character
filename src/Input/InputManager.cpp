@@ -76,7 +76,7 @@ ButtonState InputManager::getActionState(InputAction action) const
     bool currentDown{};
     bool previousDown{};
 
-    for (const InputBinding& binding: mapping.getBindngs())
+    for (const InputBinding& binding: mapping.getBindings())
     {
         if (binding.action != action)
             continue;
@@ -130,6 +130,11 @@ float InputManager::getLeftStickY() const
 float InputManager::getMouseX() const
 {
     return mouse.getX();
+}
+
+float InputManager::getMouseY() const
+{
+    return mouse.getY();
 }
 
 void InputManager::shutdown()

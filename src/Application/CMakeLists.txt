@@ -1,8 +1,8 @@
 add_library(
     Application
     STATIC
-    ${CMAKE_SOURCE_DIR}/include/InputManager.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/InputManager.cpp
+    ${CMAKE_SOURCE_DIR}/include/Application/Application.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Application.cpp
 )
 
 add_library(ControllableCharacter::App ALIAS Application)
@@ -14,5 +14,4 @@ target_link_libraries(
     PUBLIC
     SDL3::SDL3
     ControllableCharacter::InputManager
-    ControllableCharacter::Player
 )

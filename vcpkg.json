@@ -1,5 +1,5 @@
 {
-    "name": "ControllableCharacter",
+    "name": "controllable-character",
     "version-string": "1.0",
     "dependencies": [
         "sdl3"

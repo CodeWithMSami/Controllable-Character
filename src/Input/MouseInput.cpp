@@ -8,7 +8,7 @@ void MouseInput::beginFrame()
 
     SDL_MouseButtonFlags state = SDL_GetMouseState(&x, &y);
 
-    for (Uint8 i = SDL_BUTTON_LEFT; i < SDL_BUTTON_X2; ++i)
+    for (Uint8 i = SDL_BUTTON_LEFT; i <= SDL_BUTTON_X2; ++i)
     {
         current[i] = (state & SDL_BUTTON_MASK(i)) != 0;
     }

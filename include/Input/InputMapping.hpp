@@ -29,5 +29,5 @@ public:
     void addMouse(InputAction action, Uint8 button);
     void addGamepad(InputAction action, SDL_GamepadButton button);
 
-    const std::vector<InputBinding>& getBindngs() const;
+    const std::vector<InputBinding>& getBindings() const;
 };

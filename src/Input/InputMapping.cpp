@@ -27,7 +27,7 @@ void InputMapping::addGamepad(InputAction action, SDL_GamepadButton button)
     });
 }
 
-const std::vector<InputBinding>& InputMapping::getBindngs() const
+const std::vector<InputBinding>& InputMapping::getBindings() const
 {
     return bindings;
 }

@@ -17,7 +17,6 @@ add_executable(
 )
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/Input)
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/Player)
 add_subdirectory(${CMAKE_SOURCE_DIR}/src/Application)
 
 target_link_libraries(
@@ -26,4 +25,8 @@ target_link_libraries(
     ControllableCharacter::App
 )
 
-target_include_directories(${CMAKE_SOURCE_DIR}/src)
+target_include_directories(
+    ControllableCharacter
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+)
